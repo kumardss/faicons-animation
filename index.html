@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Icons</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style media="screen">
+      #chain, #battery, #thermometer, #hourglass{
+        font-size: 100px;
+      }
+
+      body{
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row text-center mb-5">
+          <p class="display-4">Font Awesome Animated Icons Using Javascript</p>
+        </div>
+        <div class="row mb-5">
+          <div class="col col-md-4 offset-md-2 text-center">
+            <div id="chain" class="fa" title="Link Broken">
+            </div>
+          </div>
+          <div class="col col-md-4 text-center">
+            <div id="battery" class="fa" title="Battery Charging">
+            </div>
+            <span id="percentage" class="h3"></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-md-4 offset-md-2 text-center">
+            <div id="thermometer" class="fa" title="Thermometer">
+            </div>
+          </div>
+          <div class="col col-md-4 text-center">
+            <div id="hourglass" class="fa" title="Hour Glass">
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+      //chainBroken
+      function chainBroken(){
+        let link=document.getElementById('chain');
+        //With className
+        //link.className="fa fa-link";
+
+        //with unique code
+        link.innerHTML="&#xf0c1";
+        setTimeout(function(){
+          //link.className="fa fa-chain-broken"
+          link.innerHTML="&#xf127"
+        },1000)
+      }
+        chainBroken();
+        setInterval(chainBroken,2000);
+
+      //chargeBattery
+      function chargeBattery(){
+        let battery=document.getElementById('battery');
+        let percentage=document.getElementById('percentage');
+        battery.className="fa fa-battery-empty";
+        percentage.innerHTML="0%";
+        //battery.innerHTML="&#xf244"
+        setTimeout(function(){
+          battery.className="fa fa-battery-quarter"
+          percentage.innerHTML="25%";
+          //battery.innerHTML="&#xf243"
+        },1000);
+        setTimeout(function(){
+          //battery.innerHTML="&#xf242"
+          battery.className="fa fa-battery-half"
+          percentage.innerHTML="50%";
+        },2000);
+        setTimeout(function(){
+          //battery.innerHTML="&#xf241"
+          battery.className="fa fa-battery-three-quarters"
+          percentage.innerHTML="70%";
+        },3000);
+        setTimeout(function(){
+          //battery.innerHTML="&#xf240"
+          battery.className="fa fa-battery-full"
+          percentage.innerHTML="100%";
+        },4000);
+      }
+      chargeBattery();
+      setInterval(chargeBattery,5000);
+
+      //Thermometer
+      function checkTemperature(){
+        let thermometer=document.getElementById('thermometer');
+        thermometer.innerHTML="&#xf2cb";
+
+        setTimeout(function(){
+          thermometer.innerHTML="&#xf2ca"
+        },1000);
+        setTimeout(function(){
+          thermometer.innerHTML="&#xf2c9"
+        },2000);
+        setTimeout(function(){
+          thermometer.innerHTML="&#xf2c8"
+        },3000);
+        setTimeout(function(){
+          thermometer.innerHTML="&#xf2c7"
+        },4000);
+      }
+      checkTemperature();
+      setInterval(checkTemperature,5000);
+
+      //HourGlass
+      function hourGlass(){
+        let hourglass=document.getElementById('hourglass');
+        hourglass.innerHTML="&#xf251";
+
+        setTimeout(function(){
+          hourglass.innerHTML="&#xf252"
+        },1000);
+        setTimeout(function(){
+          hourglass.innerHTML="&#xf253"
+        },2000);
+      };
+      hourGlass();
+      setInterval(hourGlass,3000);
+
+
+    </script>
+  </body>
+</html>
